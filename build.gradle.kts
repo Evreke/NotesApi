@@ -1,7 +1,11 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+val springBootVersion = "2.2.5.RELEASE"
+val flywayVersion = "6.3.3"
+val kotlinVersion = "1.3.71"
+
 plugins {
-    id("org.springframework.boot") version "2.2.4.RELEASE"
+    id("org.springframework.boot") version "2.2.5.RELEASE"
     id("io.spring.dependency-management") version "1.0.9.RELEASE"
     kotlin("jvm") version "1.3.61"
     kotlin("plugin.spring") version "1.3.61"
@@ -25,6 +29,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.14.0")
+    implementation("org.flywaydb:flyway-core:$flywayVersion")
     runtimeOnly("org.postgresql:postgresql")
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
